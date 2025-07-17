@@ -93,3 +93,9 @@ function readInt32LE(bytes) {
     var ref = readUInt32LE(bytes);
     return ref > 0x7fffffff ? ref - 0x100000000 : ref;
 }
+ function milesightDeviceDecode(bytes) {
+      var decoded = {};
+
+      // Add these two lines:
+      decoded.devEUI = LoRaObject.devEUI;
+      decoded.devName = LoRaObject.deviceName;
